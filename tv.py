@@ -18,7 +18,7 @@ if sys.platform == "win32":
         if (m.value & 0x0004) == 0:
             print("Warning: the terminal no enable Visual Terminal, cannot load. Please enable Visual Terminal before use.")
     else:
-        print("Waring: Your system does not support this library. Please upgrade your system to Windows 10 1511 or later to use this library.")
+        print("Waring: Your system does not support this module. Please upgrade your system to Windows 10 1511 or later to use this module.")
 def myprint(text:str):
     sys.stdout.write(text)
     sys.stdout.flush()
