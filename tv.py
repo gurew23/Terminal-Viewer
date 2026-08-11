@@ -4,10 +4,13 @@ import struct
 import time
 import sys
 import zstandard as zstd
+import os
 from functools import lru_cache
 _char = "▄"
 pixel_cache_size = 8192
 frame_cache_size = 2048
+if sys.platform == "win32":
+    
 def myprint(text:str):
     sys.stdout.write(text)
     sys.stdout.flush()
