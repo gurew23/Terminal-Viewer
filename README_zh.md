@@ -2,6 +2,7 @@
 [中](README_zh.md) | [En](README_en.md)
 
 Terminal Viewer 是一个Python模块，用于在终端显示特定格式的图像
+Tip: if your system is windows, please use Windows 10 1511 or newer and enable Virtual Terminal in your terminal.
 
 
 
