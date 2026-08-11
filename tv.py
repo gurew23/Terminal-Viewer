@@ -6,11 +6,19 @@ import sys
 import zstandard as zstd
 import os
 from functools import lru_cache
+import ctypes
 _char = "▄"
 pixel_cache_size = 8192
 frame_cache_size = 2048
 if sys.platform == "win32":
-    
+     if (sys.getwindowsversion().major >= 10 and sys.getwindowsversion().build >= 10586):
+        h=ctypes.windll.kernel32.GetStdHandle(-11)
+        m=ctypes.c_uint()
+        ctypes.windll.kernel32.GetConsoleMode(h,ctypes.byref(m))
+        if (m.value & 0x0004) == 0:
+            print("Warning: the terminal no enable Visual Terminal, cannot load. Please enable Visual Terminal before use.")
+    else:
+        print("Waring: Your system does not support this library. Please upgrade your system to Windows 10 1511 or later to use this library.")
 def myprint(text:str):
     sys.stdout.write(text)
     sys.stdout.flush()
